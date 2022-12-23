@@ -1,0 +1,15 @@
+# Ignore some files
+# author : OPSE Developpers
+# date   : 2022-05-05
+
+# IDEs and editors
+**/.idea
+**/.vscode
+
+# Environment
+**/.DS_Store
+**/.env
+
+# Cache
+**/__pycache__
+**/config.yml
