@@ -14,8 +14,8 @@ from classes.Profile import Profile
 from tools.Tool import Tool
 
 from utils.config.Config import Config
-from utils.DataTypeInput import DataTypeInput
-from utils.DataTypeOutput import DataTypeOutput
+from utils.datatypes import DataTypeInput
+from utils.datatypes import DataTypeOutput
 from utils.utils import print_debug
 from utils.utils import print_error
 
