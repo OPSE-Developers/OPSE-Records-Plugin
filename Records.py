@@ -16,8 +16,7 @@ from tools.Tool import Tool
 from utils.config.Config import Config
 from utils.datatypes import DataTypeInput
 from utils.datatypes import DataTypeOutput
-from utils.utils import print_debug
-from utils.utils import print_error
+from utils.stdout import print_debug, print_error
 
 
 class RecordsTool(Tool):
