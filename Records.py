@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import re
+from typing import Any, Dict, List
 import phonenumbers
 import requests
 from html import unescape
@@ -30,14 +31,14 @@ class RecordsTool(Tool):
         super().__init__()
 
     @staticmethod
-    def get_config() -> dict[str]:
+    def get_config() -> Dict[str, Any]:
         """Function which return tool configuration as a dictionnary."""
         return {
             'active': True,
         }
 
     @staticmethod
-    def get_lst_input_data_types() -> dict[str, bool]:
+    def get_lst_input_data_types() -> Dict[str, bool]:
         """
         Function which return the list of data types which can be use to run this Tool.
         It's will help to make decision to run Tool depending on current data.
@@ -49,7 +50,7 @@ class RecordsTool(Tool):
         }
 
     @staticmethod
-    def get_lst_output_data_types() -> list[str]:
+    def get_lst_output_data_types() -> List[str]:
         """
         Function which return the list of data types which can be receive by using this Tool.
         It's will help to make decision to complete profile to get more information.
@@ -146,7 +147,7 @@ class RecordsTool(Tool):
             # Search in the result page the HTML anchor with name, address and phone number
             for card in cards:
                 # Parse the obtained HTML object for the name
-                re_fullname: list[str] = re.findall("class=lnk>([a-zA-ZÀ-ÿ0-9_ é , ]+)</a></h2>", card)
+                re_fullname: List[str] = re.findall("class=lnk>([a-zA-ZÀ-ÿ0-9_ é , ]+)</a></h2>", card)
                 if len(re_fullname) > 0:
                     fullname: str = re_fullname[0].title()
                     if Config.is_strict():
